@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style_input_range.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="izquierda">
+            <div class="iz iz-1">
+                <i class="logo">λ</i>
+                <input class="inp-busqueda" type="search" placeholder="Search_">
+                <i class="bi bi-search"></i>
+            </div>
+            <div class="iz iz-2">
+                <div>TW</div>
+                <div>FB</div>
+                <div>YT</div>
+            </div>
+            <div class="iz iz-3">
+                <i class="steam bi bi-steam"></i>
+            </div>
+        </div>
+        <!-- -------------------------------------- -->
+        <div class="centro">
+            <a class="link" href="#"><strong>HOME</strong></a>
+            <h3 class="titulo">HALF-LIFE 3</h3>
+            <div class="container-play">
+                <div class="play">
+                    <div class="react"></div>
+                </div>
+                <button class="button-play">
+                    <i class="bi bi-play-fill"></i>
+                </button>
+            </div>
+            <div class="more-order">
+                <button class="order">HOLA</button>
+                <button class="more">SEE MORE</button>
+            </div>
+        </div>
+        <!-- -------------------------------------- -->
+        <div class="derecha">
+            <div class="der der-1">
+                <i class="bi bi-menu-button-fill"></i>
+                <span>360</span>
+            </div>
+            <div class="der der-2">
+                <span>01</span>
+                <div class="cont-range">
+                    <input type="range" name="" id="">
+                </div>
+                <span>20</span>
+            </div>
+            <div class="der der-3">
+                <button class="btn-en">EN</button>
+                <button class="btn-ep">SP</button>
+            </div>
+        </div>
+    </div>
+    <canvas id="myCanvas" resize></canvas>
+    <script type="text/paperscript" canvas="myCanvas">
+        var circle1 = new Path.RegularPolygon(new Point(view.center), 8, 400);
+        circle1.strokeColor = "#C57703";
+        circle1.strokeWidth = 2;
+        circle1.rotate(60);
+        circle1.clone().rotate(55);
+
+        for(var j = 50; j < innerWidth; j+=50){
+            for(var i = 50; i < innerHeight; i+=50){
+                var point = new Path.Circle(new Point(j,i), 1);
+                point.fillColor = "white"
+                point.strokeColor = "white";
+                point.opacity = 0.1;
+            }
+        }
+        var point1 = new Path.Circle(new Point(830,17),2);
+        point1.fillColor = "white";
+        var point2 = new Path.Circle(new Point(261, 42),2);
+        point2.fillColor = "white";
+        var point3 = new Path.Circle(new Point(286, 613),2);
+        point3.fillColor = "white";
+        var point4 = new Path.Circle(new Point(860, 589),2);
+        point4.fillColor = "white";
+        point1.position.x = view.center.x + 270;
+        point2.position.x = view.center.x - 295;
+        point3.position.x = view.center.x - 275;
+        point4.position.x = view.center.x + 300;
+
+        var triangulo = new Path();
+        triangulo.add(new Point(160, 334))
+        triangulo.add(new Point(150, 344))
+        triangulo.add(new Point(150, 324))
+        triangulo.closed = true;
+        triangulo.rotate(180);
+        triangulo.fillColor = "white";
+        triangulo.position.x = view.center.x-400;
+
+        var triangulo2 = triangulo.clone();
+        triangulo2.position = new Point(960,298);
+        triangulo2.rotate(180);
+        triangulo2.position.x = view.center.x + 400;
+
+        var rectangulo = new Path.Rectangle(new Point(innerWidth-150, 567), new Point(innerWidth-20, 603));
+        rectangulo.strokeColor = "white";
+        rectangulo.opacity = 0.5;
+
+        var rectPoint1 = new Path.Circle(new Point(innerWidth-150, 585), 7);
+        rectPoint1.fillColor = "white";
+        var rectPoint2 = new Path.Circle(new Point(innerWidth-20, 585), 7);
+        rectPoint2.fillColor = "white";
+
+        var rectLine1 = new Path();
+        rectLine1.add(new Point(innerWidth-150, 585));
+        rectLine1.add(new Point(innerWidth-135, 585));
+        rectLine1.add(new Point(innerWidth-115, 595));
+        rectLine1.add(new Point(innerWidth-85, 575));
+        rectLine1.add(new Point(innerWidth-65, 595));
+        rectLine1.add(new Point(innerWidth-45, 585));
+        rectLine1.add(new Point(innerWidth-20, 585));
+        rectLine1.strokeColor = "grey";
+        rectLine1.strokeWidth = 1;
+        rectLine1.smooth();
+
+        var rectLine2 = new Path();
+        rectLine2.add(new Point(innerWidth-150, 585));
+        rectLine2.add(new Point(innerWidth-135, 595));
+        rectLine2.add(new Point(innerWidth-115, 580));
+        rectLine2.add(new Point(innerWidth-85, 595));
+        rectLine2.add(new Point(innerWidth-65, 575));
+        rectLine2.add(new Point(innerWidth-45, 585));
+        rectLine2.add(new Point(innerWidth-20, 585));
+        rectLine2.strokeColor = "white";
+        rectLine2.strokeWidth = 2;
+        rectLine2.smooth();
+    </script>
+</body>
+</html>

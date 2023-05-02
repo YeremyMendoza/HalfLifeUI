@@ -1,0 +1,244 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: monospace;
+}
+body{
+    position: relative;
+    min-width: 100vw;
+    height: 100vh;
+    background: url("https://es.gamewallpapers.com/img_script/wallpaper_dir/img.php?src=wallpaper_half-life_fan_art_02_2560x1440.jpg&height=450&width=800&fill-to-fit&sharpen");
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+    color: #F37335;
+}
+ul{
+    list-style: none;
+}
+.logo{
+    color: #F37335;
+    font-size: 3rem;
+    text-shadow: 0px 0px 20px #FDC830;
+}
+input{
+    text-align: center;
+    border: none;
+    padding: 1%;
+    background: none;
+}
+.link{
+    text-shadow: 0px 0px 10px #FC8E06;
+}
+#myCanvas[resize]{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 4fr);
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+.bg-danger{
+    background: red;
+    opacity: 0.5;
+}
+button{
+    background: none;
+    color: white;
+    font-size: 3rem;
+    border: 0px;
+    cursor: pointer;
+}
+.titulo{
+    font-size: 3rem;
+    letter-spacing: 1.5rem;
+}
+/* ----------------elementos del centro-------------------- */
+.centro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.container-play{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.button-play{
+    position: absolute;
+    z-index: 100;
+}
+.play{
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 0.3px 1px#FDC830,-1px -0.3px 1px #FDC830;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    border-radius: 100%;
+    background: inherit;
+    overflow: hidden;
+    border: solid #FDC830;
+    border-top: 10px;
+    border-left: 10px;
+    border-bottom: 10px;
+    border-right: 10px;
+}
+.play > .react{
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    clip-path: polygon(0% 0%, 100% 0%, 53% 49%, 1% 99%, 99% 100%);
+    background: radial-gradient(#ED6420, #FC8E06); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    z-index: -1;
+    transform: rotate(60deg);
+}
+.play:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    box-shadow: inset 0 0 2000px rgba(26, 26, 26, 0.5);
+    /* filter: blur(80px); */
+    backdrop-filter: blur(5px);
+    margin: -20px;
+}
+.more-order{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    position: relative;
+    background: #4B4542;
+    border-radius: 9px;
+    padding: 2% 0px;
+}
+.order, .more{
+    position: relative;
+    font-size: 1rem;
+    border-radius: 9px;
+}
+.order{
+    left: -30px;
+    background: linear-gradient(to right,#ED6420, #FC8E06);
+    box-shadow: 0px 0px 10px #ED6420;
+    padding: 3% 25%;
+}
+.more{
+    left: -20px;
+    background: transparent;
+    padding: 3% 10%;
+}
+/* ----------------elementos de la izquierda-------------------- */
+.izquierda, .derecha{
+    box-sizing: content-box;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: #FC8E06; */
+}
+.iz{
+    width: 100%;
+    height: 30%;
+    background: none;
+}
+.iz-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    background: none;
+}
+.iz-3{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+.inp-busqueda{
+    color:white;
+    outline: none;
+}
+.steam{
+    font-size: 3rem;
+}
+/* ----------------elementos de la derecha -------------------- */
+.derecha{
+    background: none;
+}
+.der{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    background: none;
+}
+.der-1{
+    height: 10%;
+}
+.der-2{
+    height: 60%;
+}
+.der-3{
+    height: 20%;
+}
+.cont-range{
+    position: relative;
+    width: 10%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+input[type="range"]{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    transform: rotate(90deg);
+    outline: none;
+}
+.der-3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+.btn-en{
+    font-size: 1rem;
+    padding: 1% 2%;
+    background: white;
+    margin: 1px;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
+}
+.btn-ep{
+    font-size: 1rem;
+    padding: 1% 2%;
+    background: none;
+    margin: 1px;
+    border-radius: 4px;
+}
